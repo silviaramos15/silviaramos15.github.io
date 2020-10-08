@@ -274,10 +274,10 @@ font-size: 2em; /*32px*/
 
   @keyframes letter {
     from {
-      letter-spacing: normal;
+      color: black;
     }
     to {
-      letter-spacing: .1em;
+      color: #FFEBCD;
     }
   }
 
