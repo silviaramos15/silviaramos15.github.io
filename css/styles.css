@@ -5,7 +5,7 @@
     --font-size-m-factor: 24px; 
 
     --color-bg-primary:  #ff8c00;
-    --color-bg-secondary:#fffbea;
+    --color-bg-secondary: #fff8f0;
     --color-bf-third: silver;
 
     --font-family-main: 'Baloo Tammudu 2', cursive;
@@ -175,7 +175,6 @@ h3 {
    align-items: center;;
 }
 .titles {
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -185,6 +184,11 @@ h3 {
 }
 .titles h4 {
 font-size: 2em; /*32px*/
+}
+.titles h4,
+.titles h5 {
+    font-family: var(--font-family-secondary);
+   
 }
 @media (max-width: 375px){
     .titles h4 {
@@ -681,6 +685,11 @@ transform: rotate(00deg);
         .titles h5 {
         font-size: 1.750em; /*28px*/
         }
+        .titles h4,
+        .titles h5 {
+        letter-spacing: .2em;
+   
+}
         .portfolio_images {
             width: 30%;
         }
