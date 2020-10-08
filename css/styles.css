@@ -238,9 +238,7 @@ font-size: 2em; /*32px*/
 .about {
     width: 95%;
    position: relative;
-   margin: 0 auto;
-   
-   
+   margin: 0 auto; 
 }
 
 .about article {
