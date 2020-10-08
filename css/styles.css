@@ -5,7 +5,7 @@
     --font-size-m-factor: 24px; 
 
     --color-bg-primary:  #ff8c00;
-    --color-bg-secondary: #fff;
+    --color-bg-secondary:#fffbea;
     --color-bf-third: silver;
 
     --font-family-main: 'Baloo Tammudu 2', cursive;
@@ -45,6 +45,7 @@ h3 {
     margin: 0 0 2px 3px;
      
 }
+
 code {
     font-family: var(--font-family-small);
     font-size: 12px;
@@ -174,7 +175,7 @@ h3 {
    align-items: center;;
 }
 .titles {
-  
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,6 +185,11 @@ h3 {
 }
 .titles h4 {
 font-size: 2em; /*32px*/
+}
+@media (max-width: 375px){
+    .titles h4 {
+        font-size: 20px;
+        }
 }
 
 .anchor img {
@@ -225,6 +231,9 @@ font-size: 2em; /*32px*/
     }
   }
 
+/* CONTAINERS - HEADERS */
+
+
  /* -----ORANGE CONTAINER */
 .about {
     width: 95%;
@@ -236,17 +245,22 @@ font-size: 2em; /*32px*/
 
 .about article {
     width: 80%;
-    margin: 0 auto;
-   
-   
+    margin: 0 auto; 
+}
+.intro h4 {
+    font-size: var(--font-size-xs-factor);
+}
+.intro a {
+    text-decoration: none;
 }
 .intro h4 span{
     font-style: italic;
-    /* color: #FFDAB9; */
+    color: #FFDAB9;
     
 }
 .intro p span {
 font-style: italic;
+
 }
 /* skills */
 .skills {
@@ -260,6 +274,11 @@ font-style: italic;
 .skills p span {
     font-style: italic;
 }
+
+
+
+
+
     /* ----- icons */
     .right {
         width: 1em; /*16px*/
@@ -531,6 +550,10 @@ form button {
          transform: rotate(0deg);
         
      }
+     .intro h4 {
+        font-size: 32px;
+      
+     }
 
 .graphic img{
     width: 1.375em !important; /*22px*/
@@ -651,14 +674,9 @@ transform: rotate(00deg);
         width: 50px;
         height: 50px;
         position: absolute;
-        right: 10px;
-      
-        
-        
+        right: 10px;  
     }
-    /* .titles { 
-        transform: rotate(-90deg) translateY(-120px);
-        } */
+    
         .titles h4 {
             font-size: 4em; /*64px*/
         }
