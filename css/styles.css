@@ -100,7 +100,8 @@ p {
       background-color: var(--color-bf-third);
      
   }
-  .panel div{
+  .panel div,
+  .h3 {
       cursor: pointer;
   }
 /* ----------- ACTIVE TRANSITIONS */
@@ -114,11 +115,13 @@ p {
 h3 {
    transform-origin: 0 0;
     transform: rotate(-90deg); 
+    
 }
 .active h3{
     transform-origin: 0 0;
     transform: rotate(0deg);
-    margin-left: .357em /*5px*/
+    margin-left: .357em; /*5px*/
+    cursor: auto;
 }
 .active div,
 .active .sections {
@@ -252,14 +255,12 @@ font-size: 2em; /*32px*/
 .intro h4 {
     font-size: var(--font-size-xs-factor);
 }
-.intro a {
-    text-decoration: none;
-}
+
 .intro h4 span{
     font-style: italic;
-    color: #FFDAB9;
-    
 }
+
+
 .intro p span {
 font-style: italic;
 
@@ -550,6 +551,7 @@ form button {
       h3{
          transform-origin: 0 0;
          transform: rotate(0deg);
+         margin-left: 20px;
         
      }
      .intro h4 {

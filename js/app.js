@@ -122,6 +122,15 @@ panels.forEach(panel => {
    
   });
 });
+const h3 = document.querySelectorAll(".h3");
+h3.forEach(header => {
+  header.addEventListener("click", e => {
+    let activePanel = document.querySelector(".active");
+    activePanel.classList.remove("active");
+    e.target.closest(".panel").classList.toggle("active");
+   
+  });
+});
 // --------------------
 // Arrows on orange panel
 
@@ -316,3 +325,4 @@ const btnInfo = document.querySelector('.btn_info');
                 return project;
               }
   
+
