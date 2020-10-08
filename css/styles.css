@@ -115,8 +115,19 @@ p {
 h3 {
    transform-origin: 0 0;
     transform: rotate(-90deg); 
+    animation: spacing 4s ease-in-out infinite alternate;
     
 }
+
+  @keyframes spacing {
+    from {
+      letter-spacing: normal;
+    }
+    to {
+      letter-spacing: .2em;
+    }
+  }
+
 .active h3{
     transform-origin: 0 0;
     transform: rotate(0deg);
@@ -258,8 +269,17 @@ font-size: 2em; /*32px*/
 
 .intro h4 span{
     font-style: italic;
+    animation: letter 6s ease-in-out infinite alternate;
 }
 
+  @keyframes letter {
+    from {
+      letter-spacing: normal;
+    }
+    to {
+      letter-spacing: .1em;
+    }
+  }
 
 .intro p span {
 font-style: italic;
