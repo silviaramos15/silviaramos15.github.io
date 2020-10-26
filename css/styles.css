@@ -306,8 +306,16 @@ font-style: italic;
 .skills p span {
     font-style: italic;
 }
-
-
+.skill img {
+    background: transparent;
+    box-shadow: 2px 2px 2px black;
+}
+.info {
+    padding: 10px;
+    background: transparent;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
 
 
 
