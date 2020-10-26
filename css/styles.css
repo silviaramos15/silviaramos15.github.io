@@ -1,15 +1,16 @@
 /* VARIABLES */
 :root {
     --font-size-xs-factor: 14px;
-    --font-size-s-factor: 18px; 
-    --font-size-m-factor: 24px; 
+    --font-size-s-factor: 18px;
+    --font-size-m-factor: 24px;
 
-    --color-bg-primary:  #ff8c00;
+    --color-bg-primary: #F39861;
+    /* #ff8c00; */
     --color-bg-secondary: #fff8f0;
     --color-bf-third: silver;
 
     --font-family-main: 'Baloo Tammudu 2', cursive;
-    --font-family-secondary: 'Roboto', sans-serif; 
+    --font-family-secondary: 'Roboto', sans-serif;
     --font-family-small: 'Kalam', cursive;
 }
 
@@ -22,7 +23,7 @@
 .link{
     text-decoration: none;
     color:black;
-    
+
 }
 body {
     max-width: 100%;
@@ -43,7 +44,7 @@ h3 {
     text-transform: uppercase;
     font-size: .875em; /*14px*/
     margin: 0 0 2px 3px;
-     
+
 }
 
 code {
@@ -75,8 +76,8 @@ p {
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-   
-    
+
+
 }
 
 .panels {
@@ -86,17 +87,23 @@ p {
   }
 
   .panel_1 {
-      background-color:  var(--color-bg-primary);
-     
+    background-image: url(../images/or-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
   }
   .panel_2 {
-      background-color: var(--color-bg-secondary);
-     
-     
+      background-image: url(../images/w-bg.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+
+
   }
   .panel_3 {
-      background-color: var(--color-bf-third);
-     
+    background-image: url(../images/g-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
   }
   .panel div,
   .h3 {
@@ -106,15 +113,15 @@ p {
 .active {
     flex: 4;
     transition: .4s ease-in-out;
-   
-   
+
+
 }
 
 h3 {
    transform-origin: 0 0;
-    transform: rotate(-90deg); 
+    transform: rotate(-90deg);
     animation: spacing 4s ease-in-out infinite alternate;
-    
+
 }
 
   @keyframes spacing {
@@ -135,7 +142,7 @@ h3 {
 .active div,
 .active .sections {
     display: flex;
-   
+
 }
 .active div {
     cursor: auto;
@@ -148,7 +155,7 @@ h3 {
      /* ----IMAGES */
 
 .icons {
-  
+
     display: flex;
     flex-direction: column;
     /* justify-content: flex-end; */
@@ -156,17 +163,17 @@ h3 {
 }
 
 .graphic img{
-    width: 16px !important; 
+    width: 16px !important;
     margin-top: 20px;
     display: block;
-    margin-left: 50%;  
-    transition: .5s ease-in-out; 
+    margin-left: 50%;
+    transition: .5s ease-in-out;
 }
     /* ------ links effects */
     .graphic a:hover {
         transform: scale(1.1);
         filter: brightness(1.1);
-        
+
     }
 
 
@@ -185,14 +192,14 @@ h3 {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   
+
 }
 .titles {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: .625em; /*10px*/
-   height: 10%; 
+   height: 10%;
     transform: rotate(-90deg) translateY(-40px);
 }
 .titles h4 {
@@ -201,7 +208,7 @@ font-size: 2em; /*32px*/
 .titles h4,
 .titles h5 {
     font-family: var(--font-family-secondary);
-   
+
 }
 @media (max-width: 375px){
     .titles h4 {
@@ -215,11 +222,11 @@ font-size: 2em; /*32px*/
 
 
     /* ----- DECOR */
-    
+
 .cuadro {
     width: 2.5em; /*40px*/
     height: 2.5em; /*40px*/
-    background-color: var(--color-bf-third);
+    background-color: lightgrey;
     position: relative;
     top: 10%;
     left: 70%;
@@ -234,7 +241,7 @@ font-size: 2em; /*32px*/
     position: relative;
     top: -30%;
     left: 20px;
-   
+
 }
 
 
@@ -255,12 +262,12 @@ font-size: 2em; /*32px*/
 .about {
     width: 95%;
    position: relative;
-   margin: 0 auto; 
+   margin: 0 auto;
 }
 
 .about article {
     width: 80%;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 .intro h4 {
     font-size: var(--font-size-xs-factor);
@@ -290,7 +297,7 @@ font-style: italic;
     max-height: 100vh;
     max-width: 90%;
     overflow-y: auto;
-   
+
 }
 .skills p,
 .skills h4 {
@@ -325,7 +332,7 @@ font-style: italic;
         position: absolute;
         left: .313em; /*5px*/
         top: 53%;
-        cursor: pointer; 
+        cursor: pointer;
         transition: .9s ease-in-out;
     }
     .right:hover,
@@ -397,7 +404,7 @@ font-style: italic;
     border-radius: .313em; /*5px*/
     padding: 30px 20px;
     z-index: 2;
-    
+
 }
 
 .hidden,
@@ -419,7 +426,7 @@ button {
 }
 button:hover {
     filter: brightness(1.2);
-    
+
 }
 /* Form styling */
 .h2Form {
@@ -475,7 +482,7 @@ form button {
 
 .portfolio_header {
     width: 100%;
-   
+
 }
 
     .portfolio_flex {
@@ -483,7 +490,7 @@ form button {
         display: flex;
         flex-direction: column;
         align-items: center;
-      
+
     }
     .portfolio_images {
         width: 80%;
@@ -492,9 +499,9 @@ form button {
         position: relative;
         border: 3px solid black;
         border-radius: .188em; /*3px*/
-       
+
     }
-   
+
         .portfolio_images img {
             width: 100%;
         }
@@ -506,13 +513,13 @@ form button {
             background: var(--color-bg-primary);
             border-top: 1px solid black;
             width: 100%;
-            height: 20%; 
+            height: 20%;
 
         }
         .portfolio_images:hover .portfolio_button{
             display: flex !important;
             justify-content: space-around;
-            
+
         }
         .btn {
             width: 30%;
@@ -560,28 +567,28 @@ form button {
 .projectPhoto img {
     width: 100%;
     margin: 30px 0 30px;
-  
+
 }
 .projectPhoto:hover {
     transform: scale(1.1);
     transition: .8s linear;
 }
-        
+
 /* MEDIA QUERIES */
 @media (min-width: 768px) {
     .active h3 {
         transform-origin: 0 0;
-         transform: rotate(-90deg); 
+         transform: rotate(-90deg);
      }
       h3{
          transform-origin: 0 0;
          transform: rotate(0deg);
          margin-left: 20px;
-        
+
      }
      .intro h4 {
         font-size: 32px;
-      
+
      }
 
 .graphic img{
@@ -607,7 +614,7 @@ code {
     font-size: 0.875em; /*14px*/
 }
 /* sections */
-.titles { 
+.titles {
 transform: rotate(00deg);
 }
 .titles {
@@ -622,7 +629,7 @@ transform: rotate(00deg);
     border-radius: 50%;
     margin-left: 10px;
     margin-bottom: 5px;
-    
+
 }
 .titles h4 {
     font-size: 3em; /*48px*/
@@ -640,7 +647,7 @@ transform: rotate(00deg);
 }
 .skill img {
     width: 2em; /*32px*/
-    margin-left: 1.563em; /*25px*/ 
+    margin-left: 1.563em; /*25px*/
 }
 .icons {
     margin-top: 70%;
@@ -649,17 +656,17 @@ transform: rotate(00deg);
     margin-left: -10%;;
 }
     /* ----- DECOR */
-    
+
     .cuadro {
         width: 4.375em; /*70px*/
         height: 4.375em; /*70px*/
-        
+
     }
     .cuadro::after {
         content: "";
         width: 3.750em; /*60px*/
         height: 3.750em; /*60px*/
-       
+
     }
     /* BLOCK 3: GREY PLANEL */
     .portfolio_header {
@@ -686,7 +693,7 @@ transform: rotate(00deg);
             width: 70%;
             margin: 80px 0 50px;
         }
-  
+
 }
 
 @media (min-width: 1024px) {
@@ -703,9 +710,9 @@ transform: rotate(00deg);
         width: 50px;
         height: 50px;
         position: absolute;
-        right: 10px;  
+        right: 10px;
     }
-    
+
         .titles h4 {
             font-size: 4em; /*64px*/
         }
@@ -715,7 +722,7 @@ transform: rotate(00deg);
         .titles h4,
         .titles h5 {
         letter-spacing: .2em;
-   
+
 }
         .portfolio_images {
             width: 30%;
@@ -725,5 +732,3 @@ transform: rotate(00deg);
             margin: 50px 0 30px;
         }
 }
-
-

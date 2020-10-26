@@ -213,7 +213,6 @@ function arrows (arr1, arr2) {
 // -------------------------------------------------->
 
 
-
 // Display modal for the form
 
 const modalForm = document.querySelector('.modal-content_form');
