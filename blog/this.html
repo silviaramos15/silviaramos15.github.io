@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;700&family=Kalam:wght@300&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <title>Silvia's Blog</title>
+  </head>
+  <body>
+         
+
+    <div class="blog">
+        <article class="articles articles_explanation">
+            <h2>This</h2>
+            <section>
+                <p>It is the object that is executing the current function, so without any context, <code>this</code> refers to the global object which in a browser is the window. It means, it is refers to the root - the global scope</p>
+                <p>The <code>this</code> keyword's value has nothing to do with the function itself, how the function is called determines <code>this</code>' value.</p>
+                <p>As an example:</p>
+                <pre>
+                    <code class="blogCode">
+                        function testThis() {
+                            console.log(this);
+                        }
+                        testThis();
+                    </code>
+                </pre>
+                <p><code>this</code> again refers to the global object window, since the function is being executed from the global object.</p>
+            </section>
+            <section>
+                <p><b>How does it work on a object literal?</b></p>
+                <p>Let's have a look at an example!</p>
+                <img src="../images/blog/thisObjectMethod.jpg" alt="This object example">
+                <p>Within the object, <code>this</code> now refers to the object in which it is called in. An easy way to remember what this will refer to is by looking at the line where the function or method is called.</p>
+                <p><code>user.fullName();</code> Whatever is to the left of the function or method, will be what this will bind to (on this case, user).</p>
+                <p>Let's have a look at another example:</p>
+                <img src="../images/blog/thisObjectMethod2.jpg" alt="This object example">
+                <p>On this context, <code>this</code> will refer to the object, so we can use <code>this.pets.forEach();</code> Then, we will create a function and log each pet.</p>
+                <p>But what if we now want to add the user's name before the pet? So for example, we want it to say "Silvia's cat, dog and bird".</p>
+                <p>So in this context within the <code>forEach</code> method, we have another function which does not bind to the original object, but to the global object, so in this instance, since we are using <code>forEach();</code>, we can pass an argument, so we will pass in the original <code>this</code> which refers to the object, and now it works as expected.</p>
+                <img src="../images/blog/thisObjectMethod3.jpg" alt="This object example">
+            </section>
+            <section>
+                <p><b>Let's have a look at a constructor function:</b></p>
+                <pre>
+                    <code class="blogCode">
+                        function User(name) {
+                            this.name = name;
+                            console.log(this);
+                        }
+                        const newUser = new User("Silvia");
+                        User {name: "Silvia"}
+                    </code>
+                </pre>
+                <p>Here we have a user function that takes an argument of name, and then it assigns this name to that name and then it logs this to initialize the constructor function we create a constant of <code>newUser</code>, which is equal to the <code>new User("Silvia");</code></p>
+                <p>By using new, we are creating an object, and now it returns that object with the name that we passed it</p>
+            </section>
+            <section>
+                <p><b>Let's have a look at a constructor function:</b></p>
+                <p>On this case, <code>this</code> refers to the HTML element that received the event</p>
+                <pre>
+                    <code class="blogCode">
+                        < button onclick="this.style.display='none'">
+                            Click to Remove Me!
+                          < / button >  
+                    </code>
+                </pre>
+            </section>
+        </article>
+    
+
+    <footer class="footer">
+        <p><small>&copy; 2020</small> <span><a class="footerLink" href="../blog.html">Blog</a></span></p>
+    </footer>
+</div>
+ </body>
+ </html>

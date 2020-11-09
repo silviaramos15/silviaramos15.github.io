@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;700&family=Kalam:wght@300&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <title>Silvia's Blog</title>
+  </head>
+  <body>
+         
+
+    <div class="blog">
+        <article class="articles articles_explanation">
+            <h2>Scope</h2>
+            <p>Scope will make your code stand up and reduce errors, so it is very important to grass this concept.</p>
+            <p>This is about security. Scoping parts of your code helps to improve efficiency, solves naming problems, track bugs and reduce them. We can define this as the lifetime and visibility of a variable.</p>
+            <p>In JavaScript, there are two types of scopes:</p>
+            <ul>
+                <li id="#globalScope">Global scope</li>
+                <li id="#localScope">Local Scope</li>
+            </ul>
+            <section #blobalScope> 
+                <h6> GLOBAL scope</h6>
+                <p>When you start writing in a document, you are already using the Global scope. If you define a variable outside of a function, this variable is in the global scope, and therefore accessible throughout the document.</p>
+                <code>const globalVariable = "some value";</code>
+                <p>Although you could easily write all your variables globally, it is advised not to. This is because there is a good change of naming collisions when using <code>let</code> or <code>const</code>>. if you are using <code>var</code>>, your second variable will overwrite the first one after being declared, so be careful!</p>
+            </section>   
+            <section>
+                <h6 #localScope>LOCAL scope</h6>
+                <p>These are variables defined and usable only in a specific part of your code. There are 2 types:</p>
+                <ul>
+                    <li>Function scope</li>
+                    <li>Block scope</li>
+                </ul>
+                <section>
+                    <h6>Function scope</h6>
+                    <p>When a variable is declared in a function, this can only be accessed within a function:</p>
+                    <pre>
+                        <code class="blogCode">
+                            function sayHi() {
+                                const hi = "Hi reader!";
+                                console.log(hi)
+                            }
+                            sayHi() // "Hi reader!"
+                            console.log(hi) // error, hi is not defined
+                        </code>
+                    </pre>
+                </section>
+                <h6>Block scope</h6>
+                <p>When a <code>let</code> or <code>const</code> variable is declared within a brace <code>{ }</code> you can access this only within that curly brace></p>
+                <pre>
+                    <code>
+                        {
+                            const hi = "Hi reader!";
+                            console.log(hi); // 'Hi reader!'
+                        }
+                        console.log(hi) // error, hi is not defined
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>To summarize, when a variable is declared in a function, this can only be accesses in the function. However, if you defined any inner function within another function, this inner function is called a closure. Feel free to find out more about closures on my <a href="closures.html">post</a>.</p>
+            </section>
+        </article>
+    
+
+    <footer class="footer">
+        <p><small>&copy; 2020</small> <span><a class="footerLink" href="../blog.html">Blog</a></span></p>
+    </footer>
+</div>
+ </body>
+ </html>

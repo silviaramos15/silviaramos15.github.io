@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;700&family=Kalam:wght@300&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <title>Silvia's Blog</title>
+  </head>
+  <body>
+         
+
+    <div class="blog">
+        <article class="articles articles_explanation">
+            <h2>Closures</h2>
+            <section>
+                <p>Many people tend to overcomplicate this concept, because they apply normal function behaviour model. But closures do not work like a normal function.
+                First, we need to keep in mind that when you execute a function, all the variables inside are first initialized, used and then... destroyed!</p>
+                <p>Imagine we have a counter that increments by 1 every time we click on a bottom. As soon as the function ends its execution, the data will be erased from its memory so no matter how many times you click on it, the result will be 1.</p>
+            </section>
+            <section class="blogCode">
+                <pre>
+                <code>
+              function countPens() {
+               let count = 0;
+                count += 1;
+                return count + 'pens';
+              }
+                undefined
+                countPens();
+                "1 pens"
+                countPens();
+                "1 pens"
+                </pre>
+            </section>
+            <section>
+                <p>Let’s see a different example by looking at a problem associated with the global scope in JavaScript.
+                On the function below, we adding one pen every time we execute our function. As you can see in the console, it does work as expected:</p>
+            </section>
+            <section class="blogCode">
+                <pre>
+                <code>
+                let count = 0;
+                function countPens() {
+                 count += 1;
+                 return count + 'pens';
+                }
+                    countPens();
+                    "1 pens"
+                    countPens();
+                    "2 pens"
+                </code>
+                </pre>
+            </section>
+            <section>
+                <p>But what would happen if we create another function that shares the same counter? Let’s have a look:</p>
+            </section>
+            <section class="blogCode">
+                <pre>
+                function countPencils() {
+                    count += 1;
+                    return count + 'pencils';
+                }
+                countPencils();>
+                "3 pencils"
+                countPencils();
+                "2 pencils"
+                </code>
+            </pre>
+            </section>
+            <section>
+                <p>OPS! As you can see it does not work! Our counter does not start from zero…. Global variables can be a real problem in JavaScript. So what can we do? How can we maintain separate states for our two counters? We could easily place another specific counter for each function… however, what would happen if we have hundreds, or even thousands of different counters? This is where closures come in handy.</p>
+                <p>A closure is basically a function inside another function. This means that our function will have its own private variables. You can create as many as you like, even with the same variable name!</p>
+                <p>Let's walk through the steps of creating a closure now:</p>
+            </section>
+            <section class="blogCode">
+                <code>function outerFunction() {</code><code><i>//an outer function</i></code><br>
+                <code>const someCount = 0;</code><code><i>//some private variables within the outer function scope</i></code><br>
+                <code>function innerFunction() {</code><code><i>//an inner function that can modify or log any of the private variables</i></code><br> 
+                <code>someCount++;</code><br>
+                <code>}</code><br>
+                <code>return innerFunction;</code><code><i>//the inner function is returned</i></code><br>
+            </section>
+            <section>
+                <p>The first function is called ‘’outer function’’, and the one inside: ‘’inner function’’. All variables within the outer function are visible to the inner function.</p>
+                <p>Now that we know how to create a closure and its power, let’s fix our previous example:</p>
+            </section>
+            <section>
+                <ul>
+                    <li>In our <code>countPens()</code> we want to make the count variable private. In other words, our second function <code>countPencils()</code> cannot access this variable.</li>
+                </ul>
+            </section>
+            <section class="blogCode">
+                <code>function countPens() {</code><br>
+                <code>let count = 0;</code><br>
+                <code>function counter() {</code><br> 
+                <code>count += 1;</code><br>
+                <code>return count + 'pens';</code><br>
+                <code>}</code><br>
+                <code>}</code><br>
+            </section>
+            <section>
+                <ul>
+                    <li>Because the inner function is defined inside this function, it has access to the private scope of this outer function, including the count variable. Because the counter variable is defined outside of the inner variable, the count won’t reset every time the counter runs, so the data will be stored in memory.</li>
+                    <li>Now we can return the counter function (the inner function).</li>
+                    <li>We create a new variable that holds the counting function: <code>let pensCounter = countPens()</code></li>
+                    <li>Let's run it now:</li>
+                </ul>
+            </section>
+            <section class="blogCode">
+                <code>function countPens() {</code><br>
+                <code>let count = 0;</code><br>
+                <code>function counter() {</code><br> 
+                <code>count += 1;</code><br>
+                <code>return count + 'pens';</code><br>
+                <code>}</code><br>
+                <code>return counter;</code><br>
+                <code>}</code><br>
+                <code>let pensCounter = countPens()</code><br>
+                <code>pensCounter();</code><br>
+                <code>"1 pens"</code><br>
+                <code>pensCounter();</code><br>
+                <code>"2 pens"</code><br>
+                <code>pensCounter();</code><br>
+                <code>"3 pens"</code><br>
+            </section>
+            <section>
+                <ul>
+                    <li>To see the power of closures, let's do the same with our second function:</li>
+                </ul>
+            </section>
+            <section class="blogCode">
+                <code>function countPencils() {</code><br>
+                <code>let count = 0;</code><br>
+                <code>function counter() {</code><br> 
+                <code>count += 1;</code><br>
+                <code>return count + 'pencils';</code><br>
+                <code>}</code><br>
+                <code>return counter;</code><br>
+                <code>}</code><br>
+                <code>let pencilsCounter = countPencils()</code><br>
+                <code>pencilsCounter();</code><br>
+                <code>"1 pencils"</code><br>
+                <code>pencilsCounter();</code><br>
+                <code>"2 pencils"</code><br>
+                <code>pencilsCounter();</code><br>
+                <code>"3 pencils"</code><br>
+            </section>
+            <section>
+                <ul>
+                    <li>Let's run both to make sure it works:</li>
+                </ul>
+            </section>
+            <section class="blogCode">
+                <code>pencilsCounter();</code><br>
+                <code>"1 pencils"</code><br>
+                <code>pencilsCounter();</code><br>
+                <code>"2 pencils"</code><br>
+                <code>pensCounter();</code><br>
+                <code>"1 pens"</code><br>
+                <code>pencilsCounter();</code><br>
+                <code>"3 pencils"</code><br>
+                <code>pensCounter();</code><br>
+                <code>"2 pens"</code><br>
+            </section>
+            <section>
+                <p>As you can see, every time the function runs, a new scope is created, and all those count variables are private values, cause every scope is separate.</p>
+                <p>Have you heard about DRY? If not, I will tell you more about that in another chapter, but it means ‘’do not repeat yourself’’. As you can see on these examples, both functions are practically the same, there are just a few bits that have to be changed. So let’s do that now to make our code more clean.</p>
+            </section>
+            <section class="blogCode">
+                <code>function makeCounter(noum) {</code><br>
+                <code>let count = 0;</code><br>
+                <code>return function() {</code><br>
+                <code>count += 1;</code><br>
+                <code>return count + ' ' + noum;</code><br>
+                <code>}</code><br>
+                <code>}</code><br>
+            </section>
+            <section>
+                <ul>
+                    <li>Let's try if it works:</li>
+                </ul>
+            </section>
+            <section class="blogCode">
+                <code>let pensCounter = makeCounter("pens");</code><br>
+                <code>let pencilsCounter = makeCounter("pencils");</code><br>
+                <code>pensCounter();</code><br>
+                <code>"1 pens"</code><br>
+                <code>pensCounter();</code><br>
+                <code>"2 pens"</code><br>
+                <code>pencilsCounter();</code><br>
+                <code>"1 pencils"</code><br>
+                <code>pensCounter();</code><br>
+                <code>"3 pens"</code><br>
+            </section>
+            <section>
+             <ul>
+                <li>It WORKS! This is because an outer function sets a variable counter to "0"</li>
+                <li>The inner function access that variable and increments it so in memory is <code>counter = 1</code></li>
+                <li>Now, upon running the function again, its engine will know it is a closure and will use the exisisting variable in memory (where our counter is equal to 1). So next time it will increment to <code>counter = 2</code></li>
+             </ul>
+             <section>
+                 <p>As we do now have a generic function, this is reusable! so you can create as many as you like by simply create a <code>new variable = makeCounter("name");</code></p>
+             </section>
+            </section>
+            
+        </article>
+    
+
+    <footer class="footer">
+        <p><small>&copy; 2020</small> <span><a class="footerLink" href="../blog.html">Blog</a></span></p>
+    </footer>
+</div>
+ </body>
+ </html>
