@@ -609,6 +609,7 @@ form button {
     display: flex;
     flex-direction: column;
   }
+  
   .articles h2 {
      margin: 20px auto;
      text-transform: uppercase;

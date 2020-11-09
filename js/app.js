@@ -52,7 +52,6 @@ const projects = [
   technologies: "['html', 'css', 'javascript]",
   url: "https://silviaramos15.github.io/techdegree-project6/"
 },
-
 // {
 //   image: "project07",
 //   imageSmall: "p07",
