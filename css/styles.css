@@ -386,7 +386,7 @@ font-style: italic;
 .footer {
     position: fixed;
     bottom: 0;
-    right: 50%;
+    right: 40%;
 
 }
 .footerLink {
@@ -648,7 +648,7 @@ form button {
     justify-content: space-between;
     margin: 20px 0;
     border-bottom: 1px solid var(--color-bf-third);
-    height: 180px;
+    height: 200px;
     position: relative;
     
 }
@@ -823,7 +823,9 @@ transform: rotate(00deg);
         .blog_tech {
         font-size: 12px;
 }
-
+.footer {
+    right: 50%;
+}
 }
 
 @media (min-width: 1024px) {
